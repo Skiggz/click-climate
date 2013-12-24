@@ -40,7 +40,23 @@ When viewing the data, tabs will display the different pages you've requested da
 ```javascript
 var config = {
 	// Url to stream data to
-	serverUrl: "http://localhost:8080"
+	serverUrl: "http://localhost:8080",
+
+	// Max # of data points before flushing data
+	updateMaxDataPoints: 100,
+
+	// Number of seconds between flushes if max data points not met
+	updateTime: 90,
+
+	// Log events from flushing data, and other things
+	logEvents: false,
+
+	/* 
+		Log object to log to (customize logging)
+	   	Will be called by logObject("I'm a log") 
+	   	otherwise console.log("I'm a log") if set to null
+	*/
+	logObject: null
 };
 var clickClimate = new ClickClimate(config);
 
