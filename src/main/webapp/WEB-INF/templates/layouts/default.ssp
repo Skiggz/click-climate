@@ -1,0 +1,10 @@
+<%@ val body: String %>
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Hello!</title>
+	</head>
+	<body>
+		<%= unescape(body) %>
+	</body> 
+</html>

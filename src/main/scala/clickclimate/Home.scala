@@ -5,15 +5,16 @@ import org.scalatra._
 class Home extends ClickClimateStack {
 
   get("/") {
-    <html>
-  		<body>
-  			<div>
-	  			<h1>Welcome</h1>
-	  			<p>This is in progress...</p>
-  			</div>
-  		</body>
-  	</html>
+    contentType = "text/html"
+    ssp("index")
   }
+
+  get("/home") {
+  	contentType = "text/html"
+  	ssp("home")
+  }
+
+  // TODO: /live /demo
 
   notFound {
   	<html>
