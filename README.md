@@ -5,6 +5,7 @@
 ## Build & Run 
 
 ```sh
+$ chmod u+x sbt
 $ ./sbt
 > container:start
 ```
