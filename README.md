@@ -1,4 +1,12 @@
-click-climate
-=============
+# Click Climate #
 
-Creates cool maps of click patterns on your web pages
+## Build & Run ##
+
+```sh
+$ cd Click_Climate
+$ ./sbt
+> container:start
+> browse
+```
+
+If `browse` doesn't launch your browser, manually open [http://localhost:8080/](http://localhost:8080/) in your browser.
