@@ -2,8 +2,8 @@
 	import clickclimate.TagUtil
 	val tagUtil = new TagUtil	
 }#
-<%@ val body: String %>
-<%@ val title: String %>
+<%@ val body: String = "" %>
+<%@ val title: String = null %>
 <%@ val jsFile: String = null %>
 <!DOCTYPE>
 <html>
@@ -11,10 +11,26 @@
 		#if (jsFile != null) 
 			${tagUtil.jsTag(jsFile)}
 		#end	
-		<style type="text/css" href="css/bootsrap.min.css" media="screen"></style>
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/clickclimate.css">
 		<title><%= if (title != null) title else "Hello There!" %></title>
 	</head>
 	<body>
-		<%= unescape(body) %>
+		<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">ClickClimate</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="/demo">Client Demo</a></li>
+						<li><a href="/live">Viewer Demo</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="container">
+			<%= unescape(body) %>
+		</section>
 	</body> 
 </html>
