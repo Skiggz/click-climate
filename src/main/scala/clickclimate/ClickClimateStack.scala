@@ -32,6 +32,18 @@ trait ClickClimateStack extends ScalatraServlet with ScalateSupport {
     findTemplate(requestPath) map { path =>
       contentType = "text/html"
       layoutTemplate(path)
-    } orElse serveStaticResource() getOrElse resourceNotFound()
+    } orElse serveStaticResource() getOrElse {
+      contentType = "text/html"
+      halt(404, 
+        <html>
+          <body>
+              <div>
+                  <h1>Are you lost...?</h1>
+                  <p>...cause you look lost. Let's try heading back <a href="/">home</a>.</p>
+              </div>
+          </body>
+        </html>
+      )
+    }
   }
 }

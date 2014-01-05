@@ -20,15 +20,5 @@ class Home extends ClickClimateStack {
 	}
 
   // TODO: /live /demo
-	notFound {
-		<html>
-		    <body>
-		        <div>
-		            <h1>Are you lost...?</h1>
-		            <p>...cause you look lost. Let's try heading back <a href="/">home</a>.</p>
-		        </div>
-		    </body>
-		</html>
-	} 
 
 }
