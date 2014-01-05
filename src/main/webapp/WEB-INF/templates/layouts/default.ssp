@@ -1,8 +1,18 @@
+#{
+	import clickclimate.TagUtil
+	val tagUtil = new TagUtil	
+}#
 <%@ val body: String %>
+<%@ val title: String %>
+<%@ val jsFile: String = null %>
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Hello!</title>
+		#if (jsFile != null) 
+			${tagUtil.jsTag(jsFile)}
+		#end	
+		<style type="text/css" href="css/bootsrap.min.css" media="screen"></style>
+		<title><%= if (title != null) title else "Hello There!" %></title>
 	</head>
 	<body>
 		<%= unescape(body) %>
